@@ -1,0 +1,12 @@
+.editorconfig
+.eslintrc.json
+.eslintignore
+.node-version
+node_modules
+.prettierrc.json
+.prettierignore
+tsconfig.json
+tsconfig.tsbuildinfo
+.vscode/extensions.json
+.vscode/settings.json
+lib

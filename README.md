@@ -1,6 +1,7 @@
 # @onecfg/clebert
 
-Opinionated defaults for generating config files with [onecfg](https://github.com/clebert/onecfg).
+Opinionated defaults for generating config files with
+[onecfg](https://github.com/clebert/onecfg).
 
 ## Installation
 

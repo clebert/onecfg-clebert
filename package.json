@@ -1,0 +1,49 @@
+{
+  "name": "@onecfg/clebert",
+  "version": "0.0.0",
+  "description": "Opinionated defaults for generating config files with onecfg.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clebert/onecfg-clebert.git"
+  },
+  "license": "MIT",
+  "author": "Clemens Akens",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "ci": "run-p compile format:check lint",
+    "compile": "tsc --project tsconfig.json --pretty",
+    "format": "prettier .",
+    "format:check": "prettier . --check",
+    "lint": "eslint .",
+    "prepare": "run-s setup",
+    "release": "npm version",
+    "postrelease": "git push --follow-tags",
+    "presetup": "tsc src/index.ts --declaration --outDir lib",
+    "setup": "node onecfg.js"
+  },
+  "dependencies": {
+    "@onecfg/utils": "^1.1.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
+    "eslint": "^8.9.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-markdown": "^2.2.1",
+    "npm-run-all": "^4.1.5",
+    "onecfg": "^2.0.0",
+    "prettier": "^2.5.1",
+    "typescript": "^4.5.5"
+  },
+  "peerDependencies": {
+    "@onecfg/defaults": "^1.2.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
