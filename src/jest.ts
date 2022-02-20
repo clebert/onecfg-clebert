@@ -4,6 +4,7 @@ import {
   gitIgnoreFile,
   jestConfigFile,
   prettierIgnoreFile,
+  vscodeSettingsFile,
 } from '@onecfg/defaults';
 import {mergeContent} from '@onecfg/utils';
 
@@ -19,13 +20,14 @@ export function jest(options: JestOptions = {}): readonly FileChange<any>[] {
       collectCoverage,
       coverageThreshold: {
         global: {branches: 100, functions: 100, lines: 100, statements: 100},
-        restoreMocks: true,
-        testMatch: [`**/src/**/*.test.{js,jsx,ts,tsx}`],
       },
+      restoreMocks: true,
+      testMatch: [`**/src/**/*.test.{js,jsx,ts,tsx}`],
     }),
 
     mergeContent(eslintIgnoreFile, [`coverage`]),
     mergeContent(gitIgnoreFile, [`coverage`]),
     mergeContent(prettierIgnoreFile, [`coverage`]),
+    mergeContent(vscodeSettingsFile, {'files.exclude': {coverage: true}}),
   ];
 }
