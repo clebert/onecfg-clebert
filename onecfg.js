@@ -27,7 +27,7 @@ onecfg(
     declaration: true,
     outDir: `lib`,
     sourceMap: true,
-    lib: [target, `DOM`],
+    lib: [target],
     target,
   }),
 );
