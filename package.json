@@ -15,15 +15,14 @@
   ],
   "scripts": {
     "ci": "run-p compile format:check lint",
-    "compile": "tsc --project tsconfig.json --pretty",
+    "compile": "tsc --pretty",
     "format": "prettier .",
     "format:check": "prettier . --check",
     "lint": "eslint .",
-    "prepare": "run-s setup",
+    "preprepare": "tsc src/index.ts --declaration --outDir lib",
+    "prepare": "node onecfg.js",
     "release": "npm version",
-    "postrelease": "git push --follow-tags",
-    "presetup": "tsc src/index.ts --declaration --outDir lib",
-    "setup": "node onecfg.js"
+    "postrelease": "git push --follow-tags"
   },
   "dependencies": {
     "@onecfg/utils": "^1.1.1"
