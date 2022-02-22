@@ -37,7 +37,7 @@ onecfg(
 
   ...clebert.editorconfig(),
   ...clebert.eslint({env: {[target]: true}}),
-  ...clebert.github({branches: ['master'], nodeVersion}),
+  ...clebert.github({nodeVersion}),
   ...clebert.jest({collectCoverage: true}),
   ...clebert.prettier(),
   ...clebert.swc({target}),
